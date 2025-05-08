@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kent  💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      font-family: 'Pacifico', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: white;
+      text-shadow: 2px 2px 5px #ff4d6d;
+    }
+
+    .typewriter {
+      font-size: 1.7em;
+      width: 60ch; /* Updated to fit the full text */
+      margin: 30px auto;
+      color: white;
+      border-right: 3px solid rgba(255,255,255,0.75);
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(50, end), blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 50ch }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white; }
+    }
+
+    .btn {
+      background-color: #ff4d6d;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      margin: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 0, 100, 0.5);
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #ff1e56;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .cta {
+      text-align: center;
+    }
+
+    .cta button {
+      font-size: 1.2rem;
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background .3s ease;
+    }
+
+    .cta button:hover { background: #ff346f; }
+    footer {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      color: #622;
+      opacity: 0.8;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://i.imgur.com/o5Y4jYR.png') no-repeat center;
+      background-size: contain;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey Kent 💕</h1>
+  <div class="typewriter">I made this just for you... because someone like you deserves a little magic ✨</div>
+  <p style="color:white; font-size: 1.5em; margin-top: 20px;">So... how about we grab some food & drinks this Friday at 18:00 and get to know each other better ? 🌹</p>
+  <button class="btn" onclick="alert('Yay! I’ll bring my A-game 💃')">Yes!</button>
+  <button class="btn" onclick="alert('Heck yes! This is the cutest thing ever 🥰')">Absolutely!</button>
+
+  <div class="hearts" id="hearts"></div>
+  <!-- Call‑to‑action -->
+  <section class="section cta">
+    <h2>Location?</h2>
+    <p>Click on the below mail icon to see the location</p>
+    <button onclick="window.location.href='mailto:shaunlewisf23@gmail.com?subject=Shaun%20youre%20the%20Best&body=%20The%20Venue%20for%20our%20first%20date%20is%20Tres%20Homebre%27s%20🚀'">I'm in 💌</button>
+  </section>
+
+  <script>
+    const heartContainer = document.getElementById("hearts");
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
